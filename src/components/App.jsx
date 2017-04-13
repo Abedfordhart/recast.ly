@@ -2,10 +2,11 @@ var App = () => (
   <div>
     <Nav />
     <div className="col-md-7">
-      <VideoPlayer/>
+      <VideoPlayer videos = {exampleVideoData}/>
     </div>
     <div className="col-md-5">
-      <VideoList/>
+      <VideoList videos = {exampleVideoData}/>
+    }
     </div>
   </div>
 );
