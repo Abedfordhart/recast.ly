@@ -10,7 +10,7 @@ class App extends React.Component {
   onVideoClick(vid) { 
     this.setState({
       videoPlayer: vid
-    })
+    });
  //   console.log(video);
   }
 

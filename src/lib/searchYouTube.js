@@ -1,16 +1,25 @@
 var searchYouTube = (options, callback) => {
   // TODO
-  var youTubeUrl = 'https://www.googleapis.com/youtube/v3/search'
-    
-    $.ajax({
-      url: youTubeUrl,
-      type: 'GET',
-      data: {
-        part: 'snippet',
-        type: 'video'
-      }
-      embeddable: true;
-    });  
+  $.ajax({
+    url: 'https://www.googleapis.com/youtube/v3/search',
+    type: 'GET',
+    dataType: 'json',
+    data: {
+      key: options.key,
+      q: options.query,
+      maxResults: options.max,
+      part: 'snippet',
+      type: 'video',
+      embeddable: true
+    },
+    success: (data) => {
+      console.log(data);
+    },
+    error: () => {
+      console.log('Request failed')
+    }
+  });  
+
 };
 
 window.searchYouTube = searchYouTube;
