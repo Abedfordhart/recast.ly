@@ -18,7 +18,7 @@ var searchYouTube = (options, callback) => {
     error: () => {
       console.log('Request failed');
     }
-  })  
+  });  
 
 };
 

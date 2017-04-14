@@ -1,6 +1,6 @@
-var Search = () => (
-  <div className="search-bar form-inline">
-    <input className="form-control" type="text" />
+var Search = (props) => (
+  <div className="search-bar form-inline"> {console.log(props)}
+    <input className="form-control" type="text" onChange={(e) => props.getYouTubeVideo(e.target.value)} />
     <button className="btn hidden-sm-down">
       <span className="glyphicon glyphicon-search"></span>
     </button>

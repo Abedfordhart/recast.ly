@@ -11,12 +11,13 @@ class App extends React.Component {
     this.getYouTubeVideo('cats');
   }
 
-  getYouTubeVideo(query){
+  getYouTubeVideo(query) {
     var option = {
       key: YOUTUBE_API_KEY,
       query: query,
       max: 5
-    }
+    };
+
     this.props.searchYouTube(option, (data) => {
       this.setState({
         videoPlayer: data.items[0],
@@ -34,7 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Nav />
+      <Nav getYouTubeVideo = {this.getYouTubeVideo.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video = {this.state.videoPlayer}/>
         </div>
