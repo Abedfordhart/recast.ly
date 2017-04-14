@@ -13,12 +13,12 @@ var searchYouTube = (options, callback) => {
       embeddable: true
     },
     success: (data) => {
-      console.log(data);
+      callback(data);
     },
     error: () => {
-      console.log('Request failed')
+      console.log('Request failed');
     }
-  });  
+  })  
 
 };
 
